@@ -11,7 +11,7 @@ class CreateButton extends React.Component {
                     className={classes}
                     color={this.props.color || 'default'}
                     href="/create">
-                    <span className="btn-inner--text">Criar o meu quadro</span>
+                    <span className="btn-inner--text">Personalizar o meu quadro</span>
                 </Button>
             </div>
         );

@@ -25,19 +25,19 @@ class LandingA extends React.Component {
                         <Hero />
                     </section>
 
-                    <section className="section section-sm">
-                        <Cards />
+                    <section className="section section-lg">
+                        <Cards showButton="true" />
                     </section>
 
-                    <section className="section bg-gradient-success">
-                        <Quote />
+                    <section className="section section-lg bg-gradient-success text-white">
+                        <Quote/>
                     </section>
 
-                    <section className="section section-lg mt--100">
-                        <HighQ showTitle="true" />
+                    <section className="section section-lg">
+                        <HighQ/>
                     </section>
 
-                    <section className="section section-lg pt-lg-0 bg-gradient-default">
+                    <section className="section section-lg pt-lg-0 bg-gradient-primary">
                         <Guarantee />
                     </section>
 

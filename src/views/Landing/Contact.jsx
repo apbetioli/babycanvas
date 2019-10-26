@@ -80,7 +80,7 @@ class Contact extends React.Component {
                                 <div>
                                     <Button
                                         block
-                                        color="default"
+                                        color="warning"
                                         size="lg"
                                         type="button"
                                     >

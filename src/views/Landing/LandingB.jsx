@@ -3,8 +3,6 @@ import React from "react";
 import Hero from "./Hero";
 import Cards from "./Cards";
 import HighQ from "./HighQ";
-import Reviews from "./Reviews";
-import Team from "./Team";
 import Guarantee from "./Guarantee";
 import Contact from "./Contact";
 import Quote from "./Quote";
@@ -18,36 +16,44 @@ class LandingB extends React.Component {
     render() {
         return (
             <main ref="main">
-                <section className="section section-lg section-shaped">
-                    <Hero displaySkew="true" />
-                </section>
-
-                <section className="section section-sm mt--100">
-                    <HighQ/>
-                </section>
-
-                <section className="section">
-                    <Quote/>
-                </section>
-
-                <section className="section section-lg pt-lg-0">
-                    <Cards showBadges="true" showButton="true" />
-                </section>
-
-                <section className="section pb-0 bg-gradient-success">
-                    <Reviews/>
+                <section className="section section-lg section-shaped pb-300">
+                    <Hero />
                 </section>
 
                 <section className="section section-lg">
-                    <Team/>                    
+                    <HighQ />
                 </section>
 
-                <section className="section section-lg bg-gradient-default">
-                    <Guarantee/>
+                <section className="section section-lg bg-gradient-success text-white pb-150">
+                    <Quote />
+                    {/* SVG separator */}
+                    <div className="separator separator-bottom separator-skew zindex-100">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            preserveAspectRatio="none"
+                            version="1.1"
+                            viewBox="0 0 2560 100"
+                            x="0"
+                            y="0"
+                        >
+                            <polygon
+                                className="fill-white"
+                                points="2560 0 2560 100 0 100"
+                            />
+                        </svg>
+                    </div>
+                </section>
+
+                <section className="section section-lg mt--200">
+                    <Cards showButton="true" />
+                </section>
+
+                <section className="section section-lg bg-gradient-primary">
+                    <Guarantee />
                 </section>
 
                 <section className="section section-lg pt-lg-0 section-contact-us">
-                    <Contact/>
+                    <Contact />
                 </section>
             </main>
         );

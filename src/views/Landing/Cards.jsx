@@ -28,10 +28,10 @@ class Cards extends React.Component {
                                     <CardBody className="py-5">
                                         <h6 className="text-success text-uppercase">
                                             Único
-                                                </h6>
+                                        </h6>
                                         <p className="description mt-3">
-                                            Não há outro quadro igual o seu. Cada quadro é único e feito exclusivamente para você.
-                                                </p>
+                                            Não há outro quadro igual o seu. Cada quadro é único e feito exclusivamente para você. Afinal, você também é.
+                                        </p>
                                         {this.props.showBadges &&
                                             <div>
                                                 <Badge color="success" pill className="mr-1">
@@ -53,14 +53,14 @@ class Cards extends React.Component {
                             </Col>
                             <Col lg="4">
                                 <Card className="shadow border-0">
-                                    <CardImg top width="100%" src={require('assets/img/card3.jpg')} alt="..." />
+                                    <CardImg top width="100%" src={require('assets/img/card1.jpg')} alt="..." />
                                     <CardBody className="py-5">
                                         <h6 className="text-warning text-uppercase">
                                             Personalize
-                                                </h6>
+                                        </h6>
                                         <p className="description mt-3">
                                             Escreva uma mensagem demonstrando todo o seu amor e carinho a quem está só começando a vida.
-                                                </p>
+                                        </p>
                                         {this.props.showBadges &&
                                             <div>
                                                 <Badge color="warning" pill className="mr-1">
@@ -82,12 +82,12 @@ class Cards extends React.Component {
                             </Col>
                             <Col lg="4">
                                 <Card className="shadow border-0">
-                                    <CardImg top width="100%" src={require('assets/img/card1.jpg')} alt="..." />
+                                    <CardImg top width="100%" src={require('assets/img/card3.jpg')} alt="..." />
                                     <CardBody className="py-5">
                                         <h6 className="text-primary text-uppercase">Surpreenda</h6>
                                         <p className="description mt-3">
                                             Presenteie ou envie um cartão presente e permita que a pessoa possa personalizar como quiser.
-                                                </p>
+                                        </p>
                                         {this.props.showBadges &&
                                             <div>
                                                 <Badge color="primary" pill className="mr-1">

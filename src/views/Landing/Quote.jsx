@@ -8,8 +8,10 @@ class Quote extends React.Component {
     render() {
         return (
             <blockquote className="blockquote">
-                <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer className="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                <i className="fa fa-quote-left"></i>
+                <p className="blockquote mb-0">Ai que fofo!</p>
+                <footer className="blockquote-footer">Mariana, <cite title="Source Title">Mãe do Gabriel</cite></footer>
+                <i className="fa fa-quote-right"></i>
             </blockquote>
         );
     }

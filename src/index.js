@@ -17,6 +17,7 @@ ReactDOM.render(
     <BrowserRouter>
         <Switch>
             <Route path="/" exact render={props => <LandingA {...props} />} />
+            <Route path="/a" exact render={props => <LandingA {...props} />} />
             <Route path="/b" exact render={props => <LandingB {...props} />} />
             <Route path="/create" exact render={props => <Create {...props} />} />
             <Redirect to="/" />

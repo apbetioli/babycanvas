@@ -21,15 +21,18 @@ class HighQ extends React.Component {
                         />
                     </Col>
                     <Col className="order-md-1" md="6">
-                        <div className="pr-md-5">
-                            {this.props.showTitle &&
-                                <div>
-                                    <h3>Alta qualidade</h3>
-                                    <p>
-                                        Criado com o melhor em tecnologia de impressão em papel fotográfico com acabamento fosco.
-                                    </p>
-                                </div>
-                            }                                    
+                        <div className="pr-md-5 text-justify">
+                            <div>
+                                <h4 className="display-3">Memórias</h4>
+                                <p>
+                                    Acreditamos que algumas memórias nunca devem ser esquecidas, assim como as memórias dos nossos filhos quando bebês, 
+                                    quando descobrimos que o que realmente importa são as pequenas coisas.
+                                    Por isso criamos esta experiência para que você possa decorar seu ambiente e vivenciar todos os dias estas emoções.
+                                </p>
+                                <p>
+                                    Disponível em forma impressa e digital ou como cartão presente:
+                                </p>
+                            </div>
                             <ul className="list-unstyled mt-5">
                                 <li className="py-2">
                                     <div className="d-flex align-items-center">
@@ -53,7 +56,7 @@ class HighQ extends React.Component {
                                                 className="badge-circle mr-3"
                                                 color="success"
                                             >
-                                                <i className="ni ni-html5" />
+                                                <i className="ni ni-settings-gear-65" />
                                             </Badge>
                                         </div>
                                         <div>
@@ -68,32 +71,21 @@ class HighQ extends React.Component {
                                                 className="badge-circle mr-3"
                                                 color="success"
                                             >
-                                                <i className="ni ni-satisfied" />
+                                                <i className="ni ni-settings-gear-65" />
                                             </Badge>
                                         </div>
                                         <div>
-                                            <h6 className="mb-0">Tamanho 70x50cm</h6>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li className="py-2">
-                                    <div className="d-flex align-items-center">
-                                        <div>
-                                            <Badge
-                                                className="badge-circle mr-3"
-                                                color="success"
-                                            >
-                                                <i className="ni ni-satisfied" />
-                                            </Badge>
-                                        </div>
-                                        <div>
-                                            <h6 className="mb-0">Retrato ou paisagem</h6>
+                                            <h6 className="mb-0">Tamanhos A4, A3 e A2</h6>
                                         </div>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                        <CreateButton color="success mt-5"/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="text-center" md="12">
+                        <CreateButton color="success mt-5" />
                     </Col>
                 </Row>
             </Container>
