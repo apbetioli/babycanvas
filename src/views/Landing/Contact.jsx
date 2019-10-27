@@ -1,8 +1,7 @@
-import React from 'react';
-
-import classnames from "classnames";
+import React, { useState } from 'react';
 
 import {
+    Alert,
     Button,
     Card,
     CardBody,
@@ -16,24 +15,55 @@ import {
     Col
 } from "reactstrap";
 
-class Contact extends React.Component {
-    state = {};
-    render() {
-        return (
-            <Container>
-                <Row className="justify-content-center mt--100">
-                    <Col lg="8">
-                        <Card className="bg-gradient-secondary shadow">
-                            <CardBody className="p-lg-5">
-                                <h4 className="mb-1">Entre em contato</h4>
-                                <p className="mt-0">
-                                    Responderemos o mais rápido possível.
-                                </p>
-                                <FormGroup
-                                    className={classnames("mt-5", {
-                                        focused: this.state.nameFocused
-                                    })}
-                                >
+import api from 'services/api';
+
+export default function Contact() {
+
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [alert, setAlert] = useState({
+        color: "success",
+        isSent: false,
+        message:"Mensagem enviada!"
+    });
+
+    const onSubmit = e => {
+        e.preventDefault();
+        onDismiss();
+
+        const form = { name, email, message };
+
+        api.post('/api/contact', form)
+            .then(response => response.data)
+            .then(data => setAlert({
+                isSent: true,
+                message: data.status
+            }))
+            .catch(error => console.log(error));
+
+        setMessage("");
+    };
+
+    const onDismiss = () => setAlert({
+        isSent: false
+    });
+
+    return (
+        <Container>
+            <Row className="justify-content-center mt--100">
+                <Col lg="8">
+                    <Card className="bg-gradient-secondary shadow">
+                        <CardBody className="p-lg-5">
+                            <h4 className="mb-1">Entre em contato</h4>
+                            <p className="mt-0">
+                                Responderemos o mais rápido possível.
+                            </p>
+                            <Alert color="success" isOpen={alert.isSent} toggle={onDismiss}>
+                                {alert.message}
+                            </Alert>
+                            <form onSubmit={onSubmit}>
+                                <FormGroup className="mt-5">
                                     <InputGroup className="input-group-alternative">
                                         <InputGroupAddon addonType="prepend">
                                             <InputGroupText>
@@ -41,18 +71,16 @@ class Contact extends React.Component {
                                             </InputGroupText>
                                         </InputGroupAddon>
                                         <Input
+                                            name="name"
                                             placeholder="Nome"
                                             type="text"
-                                            onFocus={e => this.setState({ nameFocused: true })}
-                                            onBlur={e => this.setState({ nameFocused: false })}
+                                            value={name}
+                                            onChange={e => setName(e.target.value)}
+                                            required
                                         />
                                     </InputGroup>
                                 </FormGroup>
-                                <FormGroup
-                                    className={classnames({
-                                        focused: this.state.emailFocused
-                                    })}
-                                >
+                                <FormGroup>
                                     <InputGroup className="input-group-alternative">
                                         <InputGroupAddon addonType="prepend">
                                             <InputGroupText>
@@ -60,10 +88,12 @@ class Contact extends React.Component {
                                             </InputGroupText>
                                         </InputGroupAddon>
                                         <Input
+                                            name="email"
                                             placeholder="Email"
                                             type="email"
-                                            onFocus={e => this.setState({ emailFocused: true })}
-                                            onBlur={e => this.setState({ emailFocused: false })}
+                                            value={email}
+                                            onChange={e => setEmail(e.target.value)}
+                                            required
                                         />
                                     </InputGroup>
                                 </FormGroup>
@@ -71,10 +101,13 @@ class Contact extends React.Component {
                                     <Input
                                         className="form-control-alternative"
                                         cols="80"
-                                        name="name"
+                                        name="message"
                                         placeholder="Digite sua mensagem..."
                                         rows="4"
                                         type="textarea"
+                                        value={message}
+                                        onChange={e => setMessage(e.target.value)}
+                                        required
                                     />
                                 </FormGroup>
                                 <div>
@@ -82,18 +115,16 @@ class Contact extends React.Component {
                                         block
                                         color="warning"
                                         size="lg"
-                                        type="button"
+                                        type="submit"
                                     >
                                         Enviar
                                     </Button>
                                 </div>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                </Row>
-            </Container>
-        );
-    }
-}
-
-export default Contact;
+                            </form>
+                        </CardBody>
+                    </Card>
+                </Col>
+            </Row>
+        </Container>
+    );
+};
