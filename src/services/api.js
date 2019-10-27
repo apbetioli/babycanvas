@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-var pjson = require('../../package.json');
-
-const api = axios.create({baseURL: pjson.proxy})
+const api = axios.create({baseURL: process.env.REACT_APP_API_URL})
 
 api.defaults.headers.post['Content-Type'] = 'application/json';
 
