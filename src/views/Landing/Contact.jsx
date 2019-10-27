@@ -25,24 +25,34 @@ export default function Contact() {
     const [alert, setAlert] = useState({
         color: "success",
         isSent: false,
-        message:"Mensagem enviada!"
+        message: "Mensagem enviada!"
     });
 
-    const onSubmit = e => {
+    const onSubmit = async e => {
         e.preventDefault();
         onDismiss();
 
         const form = { name, email, message };
 
-        api.post('/api/contact', form)
-            .then(response => response.data)
-            .then(data => setAlert({
+        try {
+            await api.post('/contact', form);
+            setAlert({
+                color: "success",
                 isSent: true,
-                message: data.status
-            }))
-            .catch(error => console.log(error));
+                message: "Mensagem enviada!"
+            });
+            setMessage("");
 
-        setMessage("");
+        } catch (error) {
+            console.log(error);
+
+            setAlert({
+                color: "warning",
+                isSent: true,
+                message: 'Não foi possível enviar a mensagem! Tente novamente em alguns minutos!'
+            });
+        }
+
     };
 
     const onDismiss = () => setAlert({
@@ -59,7 +69,7 @@ export default function Contact() {
                             <p className="mt-0">
                                 Responderemos o mais rápido possível.
                             </p>
-                            <Alert color="success" isOpen={alert.isSent} toggle={onDismiss}>
+                            <Alert color={alert.color} isOpen={alert.isSent} toggle={onDismiss}>
                                 {alert.message}
                             </Alert>
                             <form onSubmit={onSubmit}>
