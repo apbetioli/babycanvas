@@ -2,8 +2,6 @@ import React from 'react'
 
 import './Quote.scss';
 
-//TODO add a carousel
-
 class Quote extends React.Component {
     render() {
         return (

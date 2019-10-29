@@ -1,13 +1,11 @@
 import React from "react";
-
 import Header from "views/Header";
-import Hero from "./Hero";
-import Cards from "./Cards";
-import HighQ from "./HighQ";
-import Guarantee from "./Guarantee";
-import Contact from "./Contact";
+import Hero from "views/Landing/Hero";
+import Cards from "views/Landing/Cards";
+import Memories from "views/Landing/Memories";
+import Guarantee from "views/Landing/Guarantee";
 import Footer from "views/Footer";
-import Quote from "./Quote";
+import Quote from "views/Landing/Quote";
 
 class LandingA extends React.Component {
     componentDidMount() {
@@ -28,20 +26,16 @@ class LandingA extends React.Component {
                         <Cards showButton="true" />
                     </section>
 
-                    <section className="section section-lg bg-gradient-success text-white">
+                    <section className="section section-lg bg-gradient-primary text-white">
                         <Quote />
                     </section>
 
                     <section className="section section-lg">
-                        <HighQ />
+                        <Memories />
                     </section>
 
-                    <section className="section section-lg pt-lg-0 bg-gradient-primary">
+                    <section className="section section-lg pt-lg-0 bg-gradient-success">
                         <Guarantee />
-                    </section>
-
-                    <section className="section section-lg pt-lg-0 section-contact-us">
-                        <Contact />
                     </section>
                 </main>
                 <Footer />

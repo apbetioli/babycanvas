@@ -6,9 +6,9 @@ import {
     Row,
     Col
 } from "reactstrap";
-import CreateButton from './CreateButton';
+import CreateButton from '../Components/CreateButton';
 
-class HighQ extends React.Component {
+class Memories extends React.Component {
     render() {
         return (
             <Container>
@@ -25,15 +25,26 @@ class HighQ extends React.Component {
                             <div>
                                 <h4 className="display-3">Memórias</h4>
                                 <p>
-                                    Acreditamos que algumas memórias nunca devem ser esquecidas, assim como as memórias dos nossos filhos quando bebês, 
-                                    quando descobrimos que o que realmente importa são as pequenas coisas.
+                                    Acreditamos que algumas lembranças nunca devem ser esquecidas.
                                     Por isso criamos esta experiência para que você possa decorar seu ambiente e vivenciar todos os dias estas emoções.
-                                </p>
-                                <p>
-                                    Disponível em forma impressa e digital ou como cartão presente:
                                 </p>
                             </div>
                             <ul className="list-unstyled mt-5">
+                                <li className="py-2">
+                                    <div className="d-flex align-items-center">
+                                        <div>
+                                            <Badge
+                                                className="badge-circle mr-3"
+                                                color="success"
+                                            >
+                                                <i className="ni ni-settings-gear-65" />
+                                            </Badge>
+                                        </div>
+                                        <div>
+                                            <h6 className="mb-0">Formato digital ou impresso</h6>
+                                        </div>
+                                    </div>
+                                </li>
                                 <li className="py-2">
                                     <div className="d-flex align-items-center">
                                         <div>
@@ -93,4 +104,4 @@ class HighQ extends React.Component {
     }
 }
 
-export default HighQ;
+export default Memories;

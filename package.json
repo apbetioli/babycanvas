@@ -1,5 +1,5 @@
 {
-  "name": "babycanvas",
+  "name": "quadrodegiz",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +13,7 @@
     "reactstrap": "^8.1.0"
   },
   "scripts": {
+    "dev": "npm start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

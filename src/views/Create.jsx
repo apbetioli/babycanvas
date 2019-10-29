@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
     Button,
     Container,
@@ -46,7 +45,7 @@ class Create extends React.Component {
                                 </span>
                                 <span className="btn-inner--text">
                                     Download React
-                  </span>
+                                </span>
                             </Button>
                         </div>
                     </Col>

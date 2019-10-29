@@ -6,7 +6,7 @@ import {
     Col
 } from "reactstrap";
 
-import CreateButton from './CreateButton';
+import CreateButton from '../Components/CreateButton';
 import './Hero.scss';
 
 class Hero extends React.Component {

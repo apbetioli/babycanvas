@@ -1,16 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import {
-  UncontrolledCollapse,
-  NavbarBrand,
+  Container,
+  Nav,
   Navbar,
+  NavbarBrand,
   NavItem,
   NavLink,
-  Nav,
-  Container,
-  Row,
-  Col,
+  UncontrolledCollapse,
   UncontrolledTooltip
 } from "reactstrap";
 
@@ -40,28 +37,22 @@ class Header extends React.Component {
               </button>
               <UncontrolledCollapse navbar toggler="#navbar_global">
                 <div className="navbar-collapse-header">
-                  <Row>
-                    <Col className="collapse-brand" xs="6">
-                      <Link to="/">
+                  <Nav className="align-items-lg-center ml-lg-auto" navbar>
+                    <NavItem>
+                      <NavLink href="/" className="nav-link-icon">
                         <i className="fa fa-home" />
                         <span className="nav-link-inner--text d-lg-none ml-2">
                           Home
                       </span>
-                      </Link>
-                    </Col>
-                    <Col className="collapse-close" xs="6">
-                      <button className="navbar-toggler" id="navbar_global">
-                        <span />
-                        <span />
-                      </button>
-                    </Col>
-                  </Row>
+                      </NavLink>
+                    </NavItem>
+                  </Nav>
                 </div>
                 <Nav className="align-items-lg-center ml-lg-auto" navbar>
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"
-                      href="#contact"
+                      href="/contact"
                       id="tooltip333589024"
                     >
                       <i className="fa fa-envelope" />

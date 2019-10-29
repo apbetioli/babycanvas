@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   Container,
   Row,
@@ -11,13 +10,12 @@ class Footer extends React.Component {
     return (
       <>
         <footer className="footer">
-          <hr />
           <Container>
-            <Row className=" align-items-center justify-content-md-between">
+            <Row>
               <Col md="12">
-                <div className=" copyright">
+                <div className="copyright">
                   © {new Date().getFullYear()}{" "}
-                    Baby Canvas
+                    Quadro de giz
                 </div>
               </Col>
             </Row>
