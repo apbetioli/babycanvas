@@ -17,14 +17,7 @@ class Footer extends React.Component {
               <Col md="12">
                 <div className=" copyright">
                   © {new Date().getFullYear()}{" "}
-                  <a
-                    href="https://www.creative-tim.com?ref=adsr-footer"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
                     Baby Canvas
-                  </a>
-                  .
                 </div>
               </Col>
             </Row>

@@ -1,13 +1,12 @@
 import React from "react";
 
+import Header from "views/Header";
 import Hero from "./Hero";
 import Cards from "./Cards";
 import HighQ from "./HighQ";
 import Guarantee from "./Guarantee";
 import Contact from "./Contact";
-
 import Footer from "views/Footer";
-import Nave from "views/Nave";
 import Quote from "./Quote";
 
 class LandingA extends React.Component {
@@ -19,7 +18,7 @@ class LandingA extends React.Component {
     render() {
         return (
             <>
-                <Nave />
+                <Header />
                 <main ref="main">
                     <section className="section section-lg section-shaped pb-300">
                         <Hero />
@@ -30,11 +29,11 @@ class LandingA extends React.Component {
                     </section>
 
                     <section className="section section-lg bg-gradient-success text-white">
-                        <Quote/>
+                        <Quote />
                     </section>
 
                     <section className="section section-lg">
-                        <HighQ/>
+                        <HighQ />
                     </section>
 
                     <section className="section section-lg pt-lg-0 bg-gradient-primary">

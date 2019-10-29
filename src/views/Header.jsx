@@ -14,7 +14,7 @@ import {
   UncontrolledTooltip
 } from "reactstrap";
 
-class Nave extends React.Component {
+class Header extends React.Component {
 
   componentDidMount() {
   }
@@ -61,7 +61,7 @@ class Nave extends React.Component {
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"
-                      href="https://www.facebook.com/creativetim"
+                      href="https://www.facebook.com/"
                       id="tooltip333589074"
                       target="_blank"
                     >
@@ -71,13 +71,13 @@ class Nave extends React.Component {
                       </span>
                     </NavLink>
                     <UncontrolledTooltip delay={0} target="tooltip333589074">
-                      Like us on Facebook
+                      Curta nossa página no Facebook
                     </UncontrolledTooltip>
                   </NavItem>
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"
-                      href="https://www.instagram.com/creativetimofficial"
+                      href="https://www.instagram.com/"
                       id="tooltip356693867"
                       target="_blank"
                     >
@@ -87,7 +87,7 @@ class Nave extends React.Component {
                       </span>
                     </NavLink>
                     <UncontrolledTooltip delay={0} target="tooltip356693867">
-                      Follow us on Instagram
+                      Siga-nos no Instagram
                     </UncontrolledTooltip>
                   </NavItem>
                 </Nav>
@@ -100,4 +100,4 @@ class Nave extends React.Component {
   }
 }
 
-export default Nave;
+export default Header;
