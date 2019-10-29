@@ -60,7 +60,7 @@ export default function Contact() {
     });
 
     return (
-        <Container>
+        <Container id={'contact'}>
             <Row className="justify-content-center mt--100">
                 <Col lg="8">
                     <Card className="bg-gradient-secondary shadow">

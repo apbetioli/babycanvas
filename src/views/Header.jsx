@@ -18,7 +18,7 @@ class Header extends React.Component {
 
   componentDidMount() {
   }
-  
+
   render() {
     return (
       <>
@@ -32,7 +32,7 @@ class Header extends React.Component {
               <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
                 <img
                   alt="..."
-                  src={require("assets/img/logo.svg")}
+                  src={require("assets/img/logo.png")}
                 />
               </NavbarBrand>
               <button className="navbar-toggler" id="navbar_global">
@@ -43,10 +43,10 @@ class Header extends React.Component {
                   <Row>
                     <Col className="collapse-brand" xs="6">
                       <Link to="/">
-                        {/* <img
-                          alt="..."
-                          src={require("assets/img/brand/argon-react.png")}
-                        /> */}
+                        <i className="fa fa-home" />
+                        <span className="nav-link-inner--text d-lg-none ml-2">
+                          Home
+                      </span>
                       </Link>
                     </Col>
                     <Col className="collapse-close" xs="6">
@@ -58,6 +58,21 @@ class Header extends React.Component {
                   </Row>
                 </div>
                 <Nav className="align-items-lg-center ml-lg-auto" navbar>
+                  <NavItem>
+                    <NavLink
+                      className="nav-link-icon"
+                      href="#contact"
+                      id="tooltip333589024"
+                    >
+                      <i className="fa fa-envelope" />
+                      <span className="nav-link-inner--text ml-2">
+                        Contato
+                      </span>
+                    </NavLink>
+                    <UncontrolledTooltip delay={0} target="tooltip333589024">
+                      Entre em contato
+                    </UncontrolledTooltip>
+                  </NavItem>
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"

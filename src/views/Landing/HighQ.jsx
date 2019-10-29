@@ -17,7 +17,7 @@ class HighQ extends React.Component {
                         <img
                             alt="..."
                             className="img-fluid "
-                            src={require("assets/img/high-quality.jpg")}
+                            src={require("assets/img/high-quality2.jpg")}
                         />
                     </Col>
                     <Col className="order-md-1" md="6">
