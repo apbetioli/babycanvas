@@ -30,10 +30,10 @@ class Header extends React.Component {
           >
             <Container>
               <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
-                {/* <img
+                <img
                   alt="..."
-                  src={require("assets/img/brand/logo.png")}
-                /> */}
+                  src={require("assets/img/logo.svg")}
+                />
               </NavbarBrand>
               <button className="navbar-toggler" id="navbar_global">
                 <span className="navbar-toggler-icon" />

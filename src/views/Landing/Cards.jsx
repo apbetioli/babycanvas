@@ -24,7 +24,7 @@ class Cards extends React.Component {
                         <Row className="row-grid">
                             <Col lg="4">
                                 <Card className="shadow border-0">
-                                    <CardImg top width="100%" src={require('assets/img/card2.jpg')} alt="..." />
+                                    <CardImg top width="100%" src={require('assets/img/card1.jpg')} alt="..." />
                                     <CardBody className="py-5">
                                         <h6 className="text-success text-uppercase">
                                             Único
@@ -53,7 +53,7 @@ class Cards extends React.Component {
                             </Col>
                             <Col lg="4">
                                 <Card className="shadow border-0">
-                                    <CardImg top width="100%" src={require('assets/img/card1.jpg')} alt="..." />
+                                    <CardImg top width="100%" src={require('assets/img/card2.jpg')} alt="..." />
                                     <CardBody className="py-5">
                                         <h6 className="text-warning text-uppercase">
                                             Personalize
