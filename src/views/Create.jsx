@@ -1,58 +1,117 @@
-import React from "react";
+import React, { useState } from 'react';
 import {
+    Alert,
     Button,
+    Card,
+    CardBody,
+    FormGroup,
+    Input,
+    InputGroupAddon,
+    InputGroupText,
+    InputGroup,
     Container,
     Row,
     Col
 } from "reactstrap";
+import Footer from './Footer';
+import Header from './Header';
+import api from 'services/api';
+import Separator from './Components/Separator';
 
-class Create extends React.Component {
-    state = {};
-    componentDidMount() {
-    }
-    render() {
-        return <Container className="py-lg-md d-flex">
-            <div className="col px-0">
-                <Row>
-                    <Col lg="6">
-                        <h1 className="display-3 text-white">
-                            A beautiful Design System{" "}
-                            <span>completed with examples</span>
-                        </h1>
-                        <p className="lead text-white">
-                            The design system comes with four pre-built pages to
-                            help you get started faster. You can change the text and
-                            images and you're good to go.
-              </p>
-                        <div className="btn-wrapper">
-                            <Button
-                                className="btn-icon mb-3 mb-sm-0"
-                                color="info"
-                                href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
-                            >
-                                <span className="btn-inner--icon mr-1">
-                                    <i className="fa fa-code" />
-                                </span>
-                                <span className="btn-inner--text">Components</span>
-                            </Button>
-                            <Button
-                                className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
-                                color="default"
-                                href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
-                            >
-                                <span className="btn-inner--icon mr-1">
-                                    <i className="ni ni-cloud-download-95" />
-                                </span>
-                                <span className="btn-inner--text">
-                                    Download React
-                                </span>
-                            </Button>
-                        </div>
-                    </Col>
-                </Row>
-            </div>
-        </Container>;
-    }
-}
+export default function Create() {
 
-export default Create;
+    const [email, setEmail] = useState("");
+    const [alert, setAlert] = useState({
+        color: "success",
+        isSent: false,
+        message: "Mensagem enviada!"
+    });
+
+    const onSubmit = async e => {
+        e.preventDefault();
+        setAlert({
+            isSent: false
+        });
+
+        const form = { email };
+
+        try {
+            await api.post('/subscribe', form);
+            setAlert({
+                color: "success",
+                isSent: true,
+                message: "Inscrito com sucesso!"
+            });
+
+        } catch (error) {
+            console.log(error);
+
+            setAlert({
+                color: "warning",
+                isSent: true,
+                message: 'Não foi possível se inscrever! Tente novamente em alguns minutos!'
+            });
+        }
+
+    };
+
+    const onDismiss = () => setAlert({
+        isSent: false
+    });
+
+    return (
+        <>
+            <Header />
+            <section className="section section-lg section-contact-us bg-gradient-success">
+                <Container>
+                    <Row className="justify-content-center">
+                        <Col lg="8">
+                            <Card clas Name="bg-gradient-secondary shadow">
+                                <CardBody className="p-lg-5">
+                                    <h4 className="mb-1">Disponível em breve!</h4>
+                                    <p className="mt-0">
+                                        Deixe seu email e seja um dos primeiros a saber quando estiver online.
+                                            </p>
+                                    <Alert color={alert.color} isOpen={alert.isSent} toggle={onDismiss}>
+                                        {alert.message}
+                                    </Alert>
+                                    <form onSubmit={onSubmit}>
+                                        <FormGroup>
+                                            <InputGroup className="input-group-alternative">
+                                                <InputGroupAddon addonType="prepend">
+                                                    <InputGroupText>
+                                                        <i className="ni ni-email-83" />
+                                                    </InputGroupText>
+                                                </InputGroupAddon>
+                                                <Input
+                                                    name="email"
+                                                    placeholder="Email"
+                                                    type="email"
+                                                    value={email}
+                                                    onChange={e => setEmail(e.target.value)}
+                                                    required
+                                                />
+                                            </InputGroup>
+                                        </FormGroup>
+                                        <div>
+                                            <Button
+                                                block
+                                                color="warning"
+                                                size="lg"
+                                                type="submit"
+                                            >
+                                                Avise-me
+                                                </Button>
+                                        </div>
+                                    </form>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                    </Row>
+                </Container>
+                <Separator />
+            </section>
+            <Footer />
+        </>
+    );
+};

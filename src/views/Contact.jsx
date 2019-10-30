@@ -31,7 +31,9 @@ export default function Contact() {
 
     const onSubmit = async e => {
         e.preventDefault();
-        onDismiss();
+        setAlert({
+            isSent: false
+        });
 
         const form = { name, email, message };
 
