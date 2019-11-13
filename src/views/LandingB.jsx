@@ -17,7 +17,7 @@ class LandingB extends React.Component {
     render() {
         return (
             <>
-                <Header />
+                <Header navbarClass="navbar-transparent"/>
                 <main ref="main">
                     <section className="section section-lg section-shaped pb-300">
                         <Hero />

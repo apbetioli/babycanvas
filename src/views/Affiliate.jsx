@@ -18,11 +18,9 @@ import Header from './Header';
 import api from 'services/api';
 import Separator from './Components/Separator';
 
-export default function Contact() {
+export default function Affiliate() {
 
-    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
     const [alert, setAlert] = useState({
         color: "success",
         isSent: false,
@@ -35,16 +33,15 @@ export default function Contact() {
             isSent: false
         });
 
-        const form = { name, email, message };
+        const form = { email };
 
         try {
-            await api.post('/contact', form);
+            await api.post('/subscribe', form);
             setAlert({
                 color: "success",
                 isSent: true,
-                message: "Mensagem enviada!"
+                message: "Inscrito com sucesso!"
             });
-            setMessage("");
 
         } catch (error) {
             console.log(error);
@@ -52,7 +49,7 @@ export default function Contact() {
             setAlert({
                 color: "warning",
                 isSent: true,
-                message: 'Não foi possível enviar a mensagem! Tente novamente em alguns minutos!'
+                message: 'Não foi possível se inscrever! Tente novamente em alguns minutos!'
             });
         }
 
@@ -64,41 +61,24 @@ export default function Contact() {
 
     return (
         <>
-            <section className="bg-gradient-success">
-                <Header />
-            </section>
-
+            <Header />
             <section className="section section-lg section-contact-us bg-gradient-success">
-                <Container id={'contact'}>
+                <Container>
                     <Row className="justify-content-center">
                         <Col lg="8">
-                            <Card className="bg-gradient-secondary shadow">
+                            <Card clas Name="bg-gradient-secondary shadow">
                                 <CardBody className="p-lg-5">
-                                    <h4 className="mb-1">Entre em contato</h4>
+                                    <h4 className="mb-1">Seja um afiliado!</h4>
                                     <p className="mt-0">
-                                        Responderemos o mais rápido possível.
-                                        </p>
+                                        Gere um link, divulgue e receba comissões pelas vendas.
+                                    </p>
+                                    <p className="mt-0">
+                                        Disponível em breve! Deixe seu email e seja um dos primeiros a saber quando estiver disponível.
+                                    </p>
                                     <Alert color={alert.color} isOpen={alert.isSent} toggle={onDismiss}>
                                         {alert.message}
                                     </Alert>
                                     <form onSubmit={onSubmit}>
-                                        <FormGroup className="mt-5">
-                                            <InputGroup className="input-group-alternative">
-                                                <InputGroupAddon addonType="prepend">
-                                                    <InputGroupText>
-                                                        <i className="ni ni-single-02" />
-                                                    </InputGroupText>
-                                                </InputGroupAddon>
-                                                <Input
-                                                    name="name"
-                                                    placeholder="Nome"
-                                                    type="text"
-                                                    value={name}
-                                                    onChange={e => setName(e.target.value)}
-                                                    required
-                                                />
-                                            </InputGroup>
-                                        </FormGroup>
                                         <FormGroup>
                                             <InputGroup className="input-group-alternative">
                                                 <InputGroupAddon addonType="prepend">
@@ -116,19 +96,6 @@ export default function Contact() {
                                                 />
                                             </InputGroup>
                                         </FormGroup>
-                                        <FormGroup className="mb-4">
-                                            <Input
-                                                className="form-control-alternative"
-                                                cols="80"
-                                                name="message"
-                                                placeholder="Digite sua mensagem..."
-                                                rows="4"
-                                                type="textarea"
-                                                value={message}
-                                                onChange={e => setMessage(e.target.value)}
-                                                required
-                                            />
-                                        </FormGroup>
                                         <div>
                                             <Button
                                                 block
@@ -136,7 +103,7 @@ export default function Contact() {
                                                 size="lg"
                                                 type="submit"
                                             >
-                                                Enviar
+                                                Avise-me
                                                 </Button>
                                         </div>
                                     </form>

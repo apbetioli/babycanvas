@@ -14,3 +14,8 @@ code {
   color: white;
   text-decoration: underline;
 }
+
+.border-preview {
+  border: 10px black solid;
+  box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.4)
+}

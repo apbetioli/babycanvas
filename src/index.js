@@ -13,6 +13,7 @@ import LandingA from 'views/LandingA';
 import LandingB from 'views/LandingB';
 import Create from 'views/Create';
 import Contact from 'views/Contact';
+import Affiliate from 'views/Affiliate';
 
 ReactDOM.render(
     <BrowserRouter>
@@ -22,6 +23,7 @@ ReactDOM.render(
             <Route path="/b" exact render={props => <LandingB {...props} />} />
             <Route path="/create" exact render={props => <Create {...props} />} />
             <Route path="/contact" exact render={props => <Contact {...props} />} />
+            <Route path="/affiliate" exact render={props => <Affiliate {...props} />} />
             <Redirect to="/" />
         </Switch>
     </BrowserRouter>,

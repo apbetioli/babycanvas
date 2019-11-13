@@ -21,7 +21,7 @@ class Header extends React.Component {
       <>
         <header className="header-global">
           <Navbar
-            className="navbar-main navbar-transparent navbar-light"
+            className={"navbar-main navbar-dark " + (this.props.navbarClass || "")}
             expand="lg"
             id="navbar-main"
           >
